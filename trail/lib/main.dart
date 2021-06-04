@@ -21,26 +21,39 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.notifications,
-              color: Colors.black,
-            ),
-            onPressed: () {
-              // do something
-            },
-          )
-        ],
-        elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
-        title: Center(
-          child: Text(
-            'MANOJ-APP',
-            style: TextStyle(
-              color: Colors.black,
+      appBar: PreferredSize(
+        preferredSize: AppBar().preferredSize,
+        child: SafeArea(
+          child: Container(
+            color: Colors.grey[400],
+            child: AppBar(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.0),
+                    topRight: Radius.circular(25.0)),
+              ),
+              actions: [
+                IconButton(
+                  icon: Icon(
+                    Icons.notifications,
+                    color: Colors.black,
+                  ),
+                  onPressed: () {
+                    // do something
+                  },
+                )
+              ],
+              elevation: 0,
+              iconTheme: IconThemeData(color: Colors.black),
+              backgroundColor: Colors.white,
+              title: Center(
+                child: Text(
+                  'MANOJ-APP',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -70,10 +83,13 @@ class MyDrawer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(0.0, 35.5, 0.0, 0.0),
               child: DrawerHeader(
                 decoration: BoxDecoration(
-                    color: Colors.blueGrey[500],
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(25.0),
+                        topRight: Radius.circular(0.0)),
+                    color: Colors.grey[400],
                     image: DecorationImage(
                       image: NetworkImage(
                           'https://png.pngtree.com/thumb_back/fw800/background/20190903/pngtree-dark-abstract-background-with-black-image_313626.jpg'),
