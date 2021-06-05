@@ -8,6 +8,7 @@ class Home extends StatelessWidget {
         children: [
           movingCards(),
           header(),
+          section(),
         ],
       ),
     );
@@ -23,101 +24,116 @@ class Home extends StatelessWidget {
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: <Widget>[
-              Container(
-                child: Center(
-                  child: Text(
-                    'DJANGO',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      'DJANGO',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                      ),
                     ),
                   ),
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.blue,
-                ),
-                width: 400.0,
-              ),
-              SizedBox(
-                width: 20.0,
-              ),
-              Container(
-                child: Center(
-                  child: Text(
-                    'ANGULAR',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
-                    ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.blue,
                   ),
-                ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.red,
-                ),
-                width: 400.0,
-              ),
-              SizedBox(
-                width: 20.0,
-              ),
-              Container(
-                child: Center(
-                  child: Text(
-                    'MYSQL',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
-                    ),
-                  ),
-                ),
-                width: 400.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.green,
+                  width: 400.0,
                 ),
               ),
               SizedBox(
                 width: 20.0,
               ),
-              Container(
-                child: Center(
-                  child: Text(
-                    'HTML',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      'ANGULAR',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                      ),
                     ),
                   ),
-                ),
-                width: 400.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.amber,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.red,
+                  ),
+                  width: 400.0,
                 ),
               ),
               SizedBox(
                 width: 20.0,
               ),
-              Container(
-                child: Center(
-                  child: Text(
-                    'CSS',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      'MYSQL',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                      ),
                     ),
                   ),
+                  width: 400.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.green,
+                  ),
                 ),
-                width: 400.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.orange,
+              ),
+              SizedBox(
+                width: 20.0,
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      'HTML',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                      ),
+                    ),
+                  ),
+                  width: 400.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.amber,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 20.0,
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      'CSS',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                      ),
+                    ),
+                  ),
+                  width: 400.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Colors.orange,
+                  ),
                 ),
               ),
               SizedBox(
@@ -146,8 +162,338 @@ Container header() {
               fontWeight: FontWeight.bold,
             ),
           ),
-        )
+        ),
       ],
+    ),
+  );
+}
+
+Container section() {
+  return Container(
+    child: Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Column(
+        children: [
+          Card(
+            elevation: 50,
+            shadowColor: Colors.black,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.open_in_new_rounded,
+                    color: Colors.green,
+                  ),
+                  title: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+                    child: Text(
+                      'Framework : django',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 8.0, 0.0),
+                    child: Text(
+                      'Topic : Django complete setup for vscode.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text('OPEN VIDEO'),
+                      onPressed: () {/* ... */},
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text(
+                        'BLOG',
+                      ),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Card(
+            elevation: 50,
+            shadowColor: Colors.black,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.open_in_new_rounded,
+                    color: Colors.green,
+                  ),
+                  title: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+                    child: Text(
+                      'Framework : django',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 8.0, 0.0),
+                    child: Text(
+                      'Topic : Django complete setup for vscode.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text('OPEN VIDEO'),
+                      onPressed: () {/* ... */},
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text(
+                        'BLOG',
+                      ),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Card(
+            elevation: 50,
+            shadowColor: Colors.black,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.open_in_new_rounded,
+                    color: Colors.green,
+                  ),
+                  title: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+                    child: Text(
+                      'Framework : django',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 8.0, 0.0),
+                    child: Text(
+                      'Topic : Django complete setup for vscode.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text('OPEN VIDEO'),
+                      onPressed: () {/* ... */},
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text(
+                        'BLOG',
+                      ),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Card(
+            elevation: 50,
+            shadowColor: Colors.black,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.open_in_new_rounded,
+                    color: Colors.green,
+                  ),
+                  title: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+                    child: Text(
+                      'Framework : django',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 8.0, 0.0),
+                    child: Text(
+                      'Topic : Django complete setup for vscode.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text('OPEN VIDEO'),
+                      onPressed: () {/* ... */},
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text(
+                        'BLOG',
+                      ),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Card(
+            elevation: 50,
+            shadowColor: Colors.black,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.open_in_new_rounded,
+                    color: Colors.green,
+                  ),
+                  title: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+                    child: Text(
+                      'Framework : django',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 8.0, 0.0),
+                    child: Text(
+                      'Topic : Django complete setup for vscode.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text('OPEN VIDEO'),
+                      onPressed: () {/* ... */},
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text(
+                        'BLOG',
+                      ),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Card(
+            elevation: 50,
+            shadowColor: Colors.black,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.open_in_new_rounded,
+                    color: Colors.green,
+                  ),
+                  title: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
+                    child: Text(
+                      'Framework : django',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                  subtitle: Padding(
+                    padding: EdgeInsets.fromLTRB(0.0, 15.0, 8.0, 0.0),
+                    child: Text(
+                      'Topic : Django complete setup for vscode.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18.0,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text('OPEN VIDEO'),
+                      onPressed: () {/* ... */},
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text(
+                        'BLOG',
+                      ),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     ),
   );
 }
