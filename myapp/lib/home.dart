@@ -5,7 +5,10 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: [movingCards()],
+        children: [
+          movingCards(),
+          header(),
+        ],
       ),
     );
   }
@@ -117,10 +120,34 @@ class Home extends StatelessWidget {
                   color: Colors.orange,
                 ),
               ),
+              SizedBox(
+                height: 20.0,
+              ),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+Container header() {
+  return Container(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0.0),
+          child: Text(
+            'Latest Content',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 30.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        )
+      ],
+    ),
+  );
 }
