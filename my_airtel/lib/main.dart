@@ -32,6 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
           'assets/svg/airtel.svg',
           width: 30,
           color: Colors.red,
+          fit: BoxFit.cover,
         ),
         actions: [
           IconButton(
@@ -235,6 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                               borderRadius:
                                                   BorderRadius.circular(15.0),
                                             ),
+                                            // ignore: deprecated_member_use
                                             child: new FlatButton(
                                               child: new Text(
                                                 'Recharge Now',
@@ -281,6 +283,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Padding(
                           padding:
                               const EdgeInsets.fromLTRB(210.0, 5.0, 0.0, 0.0),
+                          // ignore: deprecated_member_use
                           child: new FlatButton(
                             child: new Text(
                               'Add >',
@@ -311,6 +314,7 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: SvgPicture.asset(
               'assets/svg/airtel.svg',
               width: 20,
+              fit: BoxFit.cover,
             ),
             title: Text('Services'),
             activeColor: Colors.red,
