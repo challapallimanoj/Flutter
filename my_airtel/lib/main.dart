@@ -1,113 +1,352 @@
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        backgroundColor: Colors.white,
+        title: SvgPicture.asset(
+          'assets/svg/airtel.svg',
+          width: 30,
+          color: Colors.red,
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.notifications_none_outlined,
+              color: Colors.black,
+            ),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('No notifications')));
+            },
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.headset_mic_outlined,
+              color: Colors.black,
+            ),
+            tooltip: 'Show Snackbar',
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Help under maintance')));
+            },
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Get Rs. 40 >',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+            ),
+          ),
+        ],
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: Card(
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                color: Colors.blueGrey[200],
+                child: Row(
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsets.fromLTRB(30.0, 20.0, 20.0, 20.0),
+                      child: Text(
+                        'SILVER',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30.0,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 95.0,
+                    ),
+                    Card(
+                      color: Colors.grey[700],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: RichText(
+                          text: TextSpan(
+                              text: 'Discover',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: ' airtel',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'Thanks >',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ]),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(8.0, 5.0, 8.0, 0.0),
+                      child: Card(
+                        elevation: 5.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0)),
+                        child: InkWell(
+                          splashColor: Colors.blue.withAlpha(30),
+                          onTap: () {},
+                          child: SizedBox(
+                            width: 390,
+                            height: 207,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15.0, 20.0, 15.0, 0.0),
+                                      child: new CircularPercentIndicator(
+                                        radius: 100.0,
+                                        lineWidth: 5.0,
+                                        animation: true,
+                                        percent: 0.7,
+                                        center: new Text(
+                                          "875.0.MB",
+                                          style: new TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 15.0),
+                                        ),
+                                        footer: new Text(
+                                          "Daily Data Left",
+                                          style: new TextStyle(
+                                              color: Colors.grey[600],
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 15.0),
+                                        ),
+                                        circularStrokeCap:
+                                            CircularStrokeCap.round,
+                                        progressColor: Colors.grey[700],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15.0, 20.0, 15.0, 0.0),
+                                      child: new CircularPercentIndicator(
+                                        radius: 100.0,
+                                        lineWidth: 5.0,
+                                        animation: true,
+                                        percent: 0.3,
+                                        center: new Text(
+                                          "8 Days",
+                                          style: new TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 15.0),
+                                        ),
+                                        footer: new Text(
+                                          "Validity",
+                                          style: new TextStyle(
+                                              color: Colors.grey[600],
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 15.0),
+                                        ),
+                                        circularStrokeCap:
+                                            CircularStrokeCap.round,
+                                        progressColor: Colors.grey[700],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          15.0, 20.0, 15.0, 0.0),
+                                      child: new CircularPercentIndicator(
+                                        radius: 100.0,
+                                        lineWidth: 5.0,
+                                        animation: true,
+                                        percent: 1.0,
+                                        center: new Icon(
+                                            Icons.all_inclusive_outlined),
+                                        footer: new Text(
+                                          "Unlimited Calls",
+                                          style: new TextStyle(
+                                              color: Colors.grey[600],
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 15.0),
+                                        ),
+                                        circularStrokeCap:
+                                            CircularStrokeCap.round,
+                                        progressColor: Colors.grey[700],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    new ButtonBar(
+                                      mainAxisSize: MainAxisSize
+                                          .min, // this will take space as minimum as posible(to center)
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              140.0, 0.0, 0.0, 0.0),
+                                          child: Card(
+                                            color: Colors.blueGrey[40],
+                                            elevation: 0.0,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(15.0),
+                                            ),
+                                            child: new FlatButton(
+                                              child: new Text(
+                                                'Recharge Now',
+                                                style: TextStyle(
+                                                  color: Colors.red,
+                                                ),
+                                              ),
+                                              onPressed: () {},
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(25.0, 10.0, 0.0, 0.0),
+                      child: Text(
+                        'Manage account',
+                        style: TextStyle(
+                            color: Colors.grey[800],
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15.0),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: new ButtonBar(
+                      mainAxisSize: MainAxisSize
+                          .min, // this will take space as minimum as posible(to center)
+                      children: [
+                        Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(210.0, 5.0, 0.0, 0.0),
+                          child: new FlatButton(
+                            child: new Text(
+                              'Add >',
+                              style: TextStyle(
+                                color: Colors.red,
+                              ),
+                            ),
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: BottomNavyBar(
+        selectedIndex: _currentIndex,
+        showElevation: true,
+        itemCornerRadius: 24,
+        curve: Curves.easeIn,
+        onItemSelected: (index) => setState(() => _currentIndex = index),
+        items: <BottomNavyBarItem>[
+          BottomNavyBarItem(
+            icon: SvgPicture.asset(
+              'assets/svg/airtel.svg',
+              width: 20,
+            ),
+            title: Text('Services'),
+            activeColor: Colors.red,
+            textAlign: TextAlign.center,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(
+              Icons.account_balance_outlined,
+              color: Colors.black,
+            ),
+            title: Text('Banking'),
+            activeColor: Colors.amber,
+            textAlign: TextAlign.center,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(
+              Icons.explore_outlined,
+              color: Colors.black,
+            ),
+            title: Text(
+              'Explore',
+            ),
+            activeColor: Colors.blue,
+            textAlign: TextAlign.center,
+          ),
+          BottomNavyBarItem(
+            icon: Icon(
+              Icons.menu_outlined,
+              color: Colors.black,
+            ),
+            title: Text('More'),
+            activeColor: Colors.green,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }
