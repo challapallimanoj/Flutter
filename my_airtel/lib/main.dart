@@ -32,7 +32,6 @@ class _MyHomePageState extends State<MyHomePage> {
           'assets/svg/airtel.svg',
           width: 30,
           color: Colors.red,
-          fit: BoxFit.cover,
         ),
         actions: [
           IconButton(
@@ -297,6 +296,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
+                ],
+              ),
+              Row(
+                children: [
+                  //code here
                 ],
               ),
             ],
