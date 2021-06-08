@@ -32,7 +32,6 @@ dependencies:
   flutter_svg: ^0.22.0
   sticky_headers: ^0.2.0
   percent_indicator: ^3.0.1
-  carousel_slider: ^4.0.0-nullsafety.0
 
 dev_dependencies:
   flutter_test:
