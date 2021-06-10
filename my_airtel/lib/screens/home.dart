@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,8 +10,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1016,54 +1013,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavyBar(
-        selectedIndex: _currentIndex,
-        showElevation: true,
-        itemCornerRadius: 24,
-        curve: Curves.easeIn,
-        onItemSelected: (index) => setState(() => _currentIndex = index),
-        items: <BottomNavyBarItem>[
-          BottomNavyBarItem(
-            icon: SvgPicture.asset(
-              'assets/svg/airtel.svg',
-              width: 20,
-              fit: BoxFit.cover,
-            ),
-            title: Text('Services'),
-            activeColor: Colors.red,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(
-              Icons.account_balance_outlined,
-              color: Colors.black,
-            ),
-            title: Text('Banking'),
-            activeColor: Colors.amber,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(
-              Icons.explore_outlined,
-              color: Colors.black,
-            ),
-            title: Text(
-              'Explore',
-            ),
-            activeColor: Colors.blue,
-            textAlign: TextAlign.center,
-          ),
-          BottomNavyBarItem(
-            icon: Icon(
-              Icons.menu_outlined,
-              color: Colors.black,
-            ),
-            title: Text('More'),
-            activeColor: Colors.green,
-            textAlign: TextAlign.center,
-          ),
-        ],
       ),
     );
   }
